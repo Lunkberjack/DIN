@@ -163,9 +163,6 @@ public class Calculadora extends Application {
 							boolean cero = false;
 							String[] cadena = operacion.split("%");
 							int[] operandos = new int[cadena.length];
-							for(int x:operandos) {
-								System.out.println(x);
-							}
 							
 							operandos[0] = Integer.valueOf(cadena[0]); // Para que lo compruebe el for que busca ceros.
 							int div = operandos[0];
