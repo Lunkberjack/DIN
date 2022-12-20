@@ -18,4 +18,7 @@
     <fullyQualifiedTypeName name="javafx.scene.control.Button"/>
     <fullyQualifiedTypeName name="javafx.event.EventHandler"/>
     <fullyQualifiedTypeName name="javafx.event.ActionEvent"/>
+    <fullyQualifiedTypeName name="javafx.scene.control.MenuBar"/>
+    <fullyQualifiedTypeName name="javafx.scene.control.Menu"/>
+    <fullyQualifiedTypeName name="javafx.scene.control.MenuItem"/>
 </qualifiedTypeNameHistroy>
