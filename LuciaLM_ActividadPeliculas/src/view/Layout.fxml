@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="ap" prefHeight="525.0" prefWidth="824.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LayoutController">
+	<children>
+		<TextField id="titulo" fx:id="textTitulo" layoutX="183.0" layoutY="60.0" prefHeight="26.0" prefWidth="190.0" />
+		<TextField id="genero" fx:id="textGenero" layoutX="183.0" layoutY="102.0" prefHeight="26.0" prefWidth="190.0" />
+		<TextField id="duracion" fx:id="textDuracion" layoutX="184.0" layoutY="144.0" prefHeight="26.0" prefWidth="190.0" />
+
+		<Button id="btnAniadir" fx:id="btnAniadir" layoutX="74.0" layoutY="428.0" mnemonicParsing="false" onAction="#click" prefHeight="64.0" prefWidth="72.0" textFill="WHITE">
+			<font>
+				<Font name="Open Sans Semibold" size="16.0" />
+			</font>
+         <graphic>
+            <ImageView id="btnAniadir" fitHeight="52.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/add.png" />
+               </image>
+            </ImageView>
+         </graphic>
+		</Button>
+		<Button fx:id="btnEditar" layoutX="173.0" layoutY="428.0" mnemonicParsing="false" onAction="#click" prefHeight="64.0" prefWidth="72.0">
+         <graphic>
+            <ImageView fitHeight="62.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/edit.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+		<Button id="btnBorrar" fx:id="btnBorrar" layoutX="268.0" layoutY="428.0" mnemonicParsing="false" onAction="#click" prefHeight="64.0" prefWidth="72.0">
+         <graphic>
+            <ImageView fitHeight="76.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/remove.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+		<Label layoutX="82.0" layoutY="59.0" text="Título:">
+			<font>
+				<Font name="Open Sans Extrabold" size="24.0" />
+			</font>
+		</Label>
+		<Label layoutX="65.0" layoutY="101.0" text="Género:">
+			<font>
+				<Font name="Open Sans Extrabold" size="24.0" />
+			</font>
+		</Label>
+		<Label layoutX="43.0" layoutY="143.0" text="Duración: ">
+			<font>
+				<Font name="Open Sans Extrabold" size="24.0" />
+			</font>
+		</Label>
+		<Separator layoutX="409.0" layoutY="40.0" orientation="VERTICAL" prefHeight="450.0" prefWidth="6.0" />
+		<TableView fx:id="tabla" layoutX="432.0" layoutY="34.0" prefHeight="219.0" prefWidth="355.0">
+			<columns>
+				<TableColumn fx:id="colTitulo" prefWidth="171.0" sortType="DESCENDING" text="Título" />
+            <TableColumn fx:id="colGenero" prefWidth="98.0" sortType="DESCENDING" text="Género" />
+            <TableColumn fx:id="colPais" minWidth="0.0" prefWidth="85.0" sortType="DESCENDING" text="País" />
+			</columns>
+		</TableView>
+		<Label layoutX="54.0" layoutY="185.0" text="Sinopsis: ">
+			<font>
+				<Font name="Open Sans Extrabold" size="24.0" />
+			</font>
+		</Label>
+		<Label layoutX="106.0" layoutY="231.0" text="País:">
+			<font>
+				<Font name="Open Sans Extrabold" size="24.0" />
+			</font>
+		</Label>
+		<Label layoutX="69.0" layoutY="274.0" text="Idioma:">
+			<font>
+				<Font name="Open Sans Extrabold" size="24.0" />
+			</font>
+		</Label>
+		<Label layoutX="58.0" layoutY="314.0" text="Actores:">
+			<font>
+				<Font name="Open Sans Extrabold" size="24.0" />
+			</font>
+		</Label>
+		<Label layoutX="28.0" layoutY="355.0" text="Fotografía:">
+			<font>
+				<Font name="Open Sans Extrabold" size="24.0" />
+			</font>
+		</Label>
+		<TextField id="sinopsis" fx:id="textSinopsis" layoutX="185.0" layoutY="187.0" prefHeight="26.0" prefWidth="190.0" />
+		<TextField id="pais" fx:id="textPais" layoutX="185.0" layoutY="229.0" prefHeight="26.0" prefWidth="190.0" />
+		<TextField id="idioma" fx:id="textIdioma" layoutX="185.0" layoutY="272.0" prefHeight="26.0" prefWidth="190.0" />
+		<TextField id="actores" fx:id="textActores" layoutX="185.0" layoutY="314.0" prefHeight="26.0" prefWidth="190.0" />
+      <ImageView fx:id="imagenMostrar" fitHeight="219.0" fitWidth="230.0" layoutX="493.0" layoutY="272.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="fotoChooser" layoutX="185.0" layoutY="358.0" mnemonicParsing="false" onAction="#click" prefHeight="30.0" prefWidth="190.0" text="Subir" />
+	</children>
+</AnchorPane>

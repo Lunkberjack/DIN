@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #2cbcc9;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button layoutX="268.0" layoutY="266.0" mnemonicParsing="false" text="Aceptar" textAlignment="CENTER">
+         <font>
+            <Font name="Open Sans" size="13.0" />
+         </font></Button>
+      <TextField layoutX="199.0" layoutY="177.0" prefHeight="26.0" prefWidth="205.0" />
+      <TextField layoutX="199.0" layoutY="222.0" prefHeight="26.0" prefWidth="205.0" />
+      <Label id="textoIniciar" layoutX="211.0" layoutY="117.0" text="Iniciar sesión" textFill="WHITE">
+         <font>
+            <Font name="Open Sans Extrabold" size="26.0" />
+         </font>
+      </Label>
+   </children>
+   <effect>
+      <ColorAdjust />
+   </effect>
+</Pane>

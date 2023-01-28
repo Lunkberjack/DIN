@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="744.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controlador">
+   <children>
+      <Separator layoutX="314.0" layoutY="-3.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="11.0" />
+      <TableView fx:id="TablaUsuarios" layoutX="314.0" layoutY="-2.0" prefHeight="400.0" prefWidth="434.0">
+        <columns>
+          <TableColumn fx:id="tablaNombre" prefWidth="97.0" text="Nombre" />
+          <TableColumn fx:id="tablaApellido1" prefWidth="158.0" text="Primer Apellido" />
+          <TableColumn fx:id="tablaApellido2" prefWidth="178.0" text="Segundo Apellido" />
+        </columns>
+      </TableView>
+      <Label fx:id="nombre" layoutX="14.0" layoutY="39.0" text="Nombre:" />
+      <Label fx:id="primerApellido" layoutX="14.0" layoutY="92.0" text="Primer Apellido:" />
+      <Label fx:id="segundoApellido" layoutX="12.0" layoutY="137.0" text="Segundo Apellido:" />
+      <Button fx:id="botonAniadir" layoutX="17.0" layoutY="222.0" mnemonicParsing="false" onAction="#crear" prefHeight="24.0" prefWidth="289.0" text="Añadir Usuario" />
+      <Button fx:id="botonEditar" layoutX="17.0" layoutY="268.0" mnemonicParsing="false" onAction="#editar" prefHeight="24.0" prefWidth="289.0" text="Editar Usuario" />
+      <Button fx:id="botonEliminar" layoutX="17.0" layoutY="319.0" mnemonicParsing="false" onAction="#eliminar" prefHeight="24.0" prefWidth="289.0" text="Eliminar Usuario" />
+      <TextField fx:id="tfnombre" layoutX="144.0" layoutY="43.0" prefHeight="24.0" prefWidth="162.0" />
+      <TextField fx:id="tfapellido1" layoutX="145.0" layoutY="88.0" prefHeight="24.0" prefWidth="162.0" />
+      <TextField fx:id="tfapellido2" layoutX="144.0" layoutY="135.0" prefHeight="24.0" prefWidth="162.0" />
+   </children>
+</AnchorPane>
