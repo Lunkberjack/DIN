@@ -2,6 +2,7 @@ package controller;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -27,8 +28,14 @@ import javafx.stage.Stage;
 import model.Pelicula;
 
 public class LayoutController implements Initializable {
+	private ConnectionController conexion = new ConnectionController();
+
+	private MetodosSQL metodos;
+
 	private FileInputStream pasarBlob;
 	
+	private File foto;
+
 	@FXML 
 	private AnchorPane ap;
 
@@ -82,57 +89,52 @@ public class LayoutController implements Initializable {
 
 	@FXML
 	private ImageView imagenMostrar;
-	
+
 	private ObservableList<Pelicula> listaPeliculas;
 	private int posicionTabla;
 
-	@FXML
 	void aniadir() {
 		Pelicula peli = crearPelicula();
 		//limpiar();
 		listaPeliculas.add(peli);
+
+		metodos.aniadirPelicula(Pelicula.getContadorPeliculas(), textTitulo.getText(), textGenero.getText(),
+				textDuracion.getText(), textSinopsis.getText(), textPais.getText(), textIdioma.getText(),
+				textActores.getText(), pasarBlob);
 	}
 
-	@FXML
-	void editar(ActionEvent event) {
-		Pelicula peli = crearPelicula();
-		//limpiar();
-		listaPeliculas.set(posicionTabla, peli);
+	void editar(int id) {
+		try {
+			metodos.modificar(id, textTitulo.getText(), textGenero.getText(), textDuracion.getText(), textSinopsis.getText(),
+					textPais.getText(), textIdioma.getText(), textActores.getText(), foto);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
 	}
 
-	@FXML
 	private void borrar() {
-		listaPeliculas.remove(posicionTabla);
+		Pelicula aBorrar = getTablaPeliculaSeleccionada();
+		listaPeliculas.remove(aBorrar);
+		metodos.eliminar(aBorrar.getId());
 	}
 
 	private Pelicula crearPelicula() {
-		if(pasarBlob != null) {
-			return new Pelicula(textTitulo.getText(), textGenero.getText(), textDuracion.getText(),
+		return new Pelicula(textTitulo.getText(), textGenero.getText(), textDuracion.getText(),
 				textSinopsis.getText(), textPais.getText(), textIdioma.getText(),
 				textActores.getText(), pasarBlob);
-		} else {
-			// Cambiar por un alert cuando se implemente la validación
-			return null;
-		}
-
 	}
 
-	//    /*
-	//    * Metodo para inicializar la posición de la tabla y también
-	//    para inicializar la tabla.
-	//    * No es necesario en este metodo crear las columnas ya que han
-	//    sido creadas en SceneBuilder
-	//    */
-	private void Inicializar()
-	{
+	private void inicializar() {
+		conexion.conectar("jdbc:sqlite:/home/lucia/videoclub.db");
+		metodos = new MetodosSQL(conexion.getConexion());
 		posicionTabla = 0;
 		colTitulo.setCellValueFactory(new PropertyValueFactory<Pelicula, String>("titulo"));
 		colGenero.setCellValueFactory(new PropertyValueFactory<Pelicula, String>("genero"));
 		colPais.setCellValueFactory(new PropertyValueFactory<Pelicula, String>("pais"));
 		listaPeliculas = FXCollections.observableArrayList();
 		tabla.setItems(listaPeliculas);
-
 	}
+
 	//    IMPLEMENTAR OTRO BOTÓN
 	//    void limpiar()
 	//    {
@@ -141,6 +143,7 @@ public class LayoutController implements Initializable {
 	//    txtSegundoApellido.setText("");
 	//    }
 	//    
+
 	/*
 	 * Cuando se selecciona una fila de la tabla se ejecuta este me-
     todo
@@ -151,7 +154,6 @@ public class LayoutController implements Initializable {
 			indicarFilaSeleccionada();
 		}
 	};
-
 
 	private Pelicula getTablaPeliculaSeleccionada() {
 		if(tabla != null) {
@@ -165,11 +167,6 @@ public class LayoutController implements Initializable {
 		return null;
 	}
 
-	/*
-	 * Es un método que permite escribir en los campos de texto
-	 * el nombre, primer apellido y segundo apellido del cliente
-	 * que se ha seleccionado en la tabla
-	 */
 	private void indicarFilaSeleccionada() {
 		final Pelicula peliculaSeleccionada = getTablaPeliculaSeleccionada();
 		posicionTabla = listaPeliculas.indexOf(peliculaSeleccionada);
@@ -181,16 +178,14 @@ public class LayoutController implements Initializable {
 			textPais.setText(peliculaSeleccionada.getPais());
 			textIdioma.setText(peliculaSeleccionada.getIdioma());
 			textActores.setText(peliculaSeleccionada.getActores());
-			InputStream ke = (InputStream)peliculaSeleccionada.getImagen();
-            imagenMostrar.setImage(new Image(ke));
+			imagenMostrar.setImage(new Image(peliculaSeleccionada.getImagen()));
 			// 
 		}
 	}
 
-
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
-		Inicializar();
+		inicializar();
 		final ObservableList<Pelicula> tablaClienteSeleccionado = tabla.getSelectionModel().getSelectedItems();
 		tablaClienteSeleccionado.addListener(selectorTabla);
 	}
@@ -201,9 +196,14 @@ public class LayoutController implements Initializable {
 			System.out.println("pulsao");
 			aniadir();
 		} else if(event.getSource().equals(btnEditar)) {
-
+			if(getTablaPeliculaSeleccionada() != null) {
+				editar(getTablaPeliculaSeleccionada().getId());
+			} else {
+				System.out.println("ninguna seleccionada");
+			}
+			
 		} else if(event.getSource().equals(btnBorrar)) {
-
+			borrar();
 		} else if(event.getSource().equals(fotoChooser)) {
 			System.out.println("fotoChooser");
 
@@ -211,20 +211,20 @@ public class LayoutController implements Initializable {
 			fileChooser.setTitle("Elegir imagen");
 			// Los filtros que permitirá aplicar para buscar imágenes
 			fileChooser.getExtensionFilters().addAll(
-				new FileChooser.ExtensionFilter("All Images", "*.*"),
-				new FileChooser.ExtensionFilter("JPG", "*.jpg"),
-				new FileChooser.ExtensionFilter("PNG", "*.png")
-			);
+					new FileChooser.ExtensionFilter("All Images", "*.*"),
+					new FileChooser.ExtensionFilter("JPG", "*.jpg"),
+					new FileChooser.ExtensionFilter("PNG", "*.png")
+					);
 
 			Stage stage = (Stage) ap.getScene().getWindow();
-			File foto = fileChooser.showOpenDialog(stage);
 			
-            if (foto != null) {
-                pasarBlob = new FileInputStream(foto);
-                imagenMostrar.setImage(new Image(pasarBlob));
-            }
-            pasarBlob.close();
+			foto = fileChooser.showOpenDialog(stage);
+			
+			if (foto != null) {
+				pasarBlob = new FileInputStream(foto);
+				imagenMostrar.setImage(new Image(pasarBlob));
+			}
+			pasarBlob.close();
 		}
-		
 	}
 }

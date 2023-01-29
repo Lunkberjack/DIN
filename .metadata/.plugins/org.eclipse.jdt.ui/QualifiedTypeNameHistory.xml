@@ -51,4 +51,7 @@
     <fullyQualifiedTypeName name="model.Pelicula"/>
     <fullyQualifiedTypeName name="javafx.collections.ListChangeListener"/>
     <fullyQualifiedTypeName name="javafx.scene.control.cell.PropertyValueFactory"/>
+    <fullyQualifiedTypeName name="java.io.FileInputStream"/>
+    <fullyQualifiedTypeName name="java.io.InputStream"/>
+    <fullyQualifiedTypeName name="java.io.File"/>
 </qualifiedTypeNameHistroy>

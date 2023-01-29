@@ -36,8 +36,6 @@ public class Main extends Application {
 			
 			System.out.println("me he conectao");
 			// Ir descomentando para probar:
-			
-			metodos.aniadirPelicula(0, null, null, 0, null, null, null, null, null);
 			// metodos.aniadirFabricante(7, "Subaru");
 			// metodos.aniadirCoche(7, "Forester", 20000, 2020, 4000, 7);
 			// Se pueden ir modificando con distintas combinaciones de parámetros.
