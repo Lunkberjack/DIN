@@ -1,6 +1,7 @@
 package model;
 
 import java.io.FileInputStream;
+import java.io.InputStream;
 
 public class Pelicula {
 	// Para llevar la cuenta de películas introducidas (y el id de cada una)
@@ -8,10 +9,10 @@ public class Pelicula {
 	
 	private int id;
 	private String titulo, genero, duracion, sinopsis, pais, idioma, actores;
-	private FileInputStream imagen;
+	private byte[] imagen;
 
 	public Pelicula(String titulo, String genero, String duracion, String sinopsis, String pais, String idioma,
-			String actores, FileInputStream imagen) {
+			String actores, byte[] imagen) {
 		this.id = ++contadorPeliculas; // automáticamente aumenta cada vez que instanciamos una peli
 		this.titulo = titulo;
 		this.genero = genero;
@@ -23,12 +24,29 @@ public class Pelicula {
 		this.imagen = imagen;
 	}
 	
-	// Solo getters para aumentar la encapsulación y evitar
-	// la modificación indeseada --------------------------
+	public Pelicula(int id, String titulo, String genero, String duracion, String sinopsis, String pais, String idioma,
+			String actores, byte[] imagen) {
+		this.id = id;
+		this.titulo = titulo;
+		this.genero = genero;
+		this.duracion = duracion;
+		this.sinopsis = sinopsis;
+		this.pais = pais;
+		this.idioma = idioma;
+		this.actores = actores;
+		this.imagen = imagen;
+	}
 	
 	public static int getContadorPeliculas() {
 		return contadorPeliculas;
 	}
+	
+	public static void setContadorPeliculas(int contador) {
+		Pelicula.contadorPeliculas = contador;
+	}
+	
+	// Solo getter para aumentar la encapsulación y evitar
+	// la modificación indeseada --------------------------
 
 	public int getId() {
 		return id;
@@ -91,11 +109,11 @@ public class Pelicula {
 		this.actores = actores;
 	}
 
-	public FileInputStream getImagen() {
+	public byte[] getImagen() {
 		return imagen;
 	}
 
-	public void setImagen(FileInputStream imagen) {
+	public void setImagen(byte[] imagen) {
 		this.imagen = imagen;
 	}
 }
