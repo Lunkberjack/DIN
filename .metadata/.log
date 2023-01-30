@@ -7008,3 +7008,915 @@ java.lang.IllegalArgumentException: release 19 is not found in the system
 
 !ENTRY org.eclipse.ui 2 2 2023-01-30 18:48:46.818
 !MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+!SESSION 2023-01-30 19:24:02.621 -----------------------------------------------
+eclipse.buildId=4.22.0.I20211124-1800
+java.version=11.0.17
+java.vendor=Ubuntu
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.tm4e.languageconfiguration 4 0 2023-01-30 19:24:07.194
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.tm4e.languageconfiguration [814]
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core
+    -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+       org.eclipse.tm4e.core [1102]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.ui
+    -> Bundle-SymbolicName: org.eclipse.tm4e.ui; bundle-version="0.6.1.202211021121"; singleton:="true"
+       org.eclipse.tm4e.ui [1104]
+         Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+           -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.registry
+    -> Bundle-SymbolicName: org.eclipse.tm4e.registry; bundle-version="0.6.2.202210221922"; singleton:="true"
+       org.eclipse.tm4e.registry [1103]
+         Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+           -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.lambda$1(ModuleContainer.java:1834)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1829)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1775)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1739)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:228)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:339)
+
+!ENTRY org.eclipse.wildwebdeveloper 4 0 2023-01-30 19:24:07.198
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.wildwebdeveloper [861]
+  Unresolved requirement: Require-Bundle: org.eclipse.lsp4e; bundle-version="0.13.6"
+    -> Bundle-SymbolicName: org.eclipse.lsp4e; bundle-version="0.16.0.202212211403"; singleton:="true"
+       org.eclipse.lsp4e [1089]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.eclipse.tm4e.ui
+           -> Bundle-SymbolicName: org.eclipse.tm4e.ui; bundle-version="0.6.1.202211021121"; singleton:="true"
+              org.eclipse.tm4e.ui [1104]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+                Unresolved requirement: Require-Bundle: org.eclipse.tm4e.registry; bundle-version="0.6.2"
+                  -> Bundle-SymbolicName: org.eclipse.tm4e.registry; bundle-version="0.6.2.202210221922"; singleton:="true"
+                     org.eclipse.tm4e.registry [1103]
+                       Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+                         -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+                            org.eclipse.tm4e.core [1102]
+                              Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+                Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+                  -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.registry; bundle-version="0.1.0"
+    -> Bundle-SymbolicName: org.eclipse.tm4e.registry; bundle-version="0.6.2.202210221922"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.lambda$1(ModuleContainer.java:1834)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1829)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1775)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1739)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:228)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:339)
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 4 0 2023-01-30 19:24:07.198
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.wildwebdeveloper.xml [863]
+  Unresolved requirement: Require-Bundle: org.eclipse.lsp4e; bundle-version="0.13.4"
+    -> Bundle-SymbolicName: org.eclipse.lsp4e; bundle-version="0.16.0.202212211403"; singleton:="true"
+       org.eclipse.lsp4e [1089]
+         Unresolved requirement: Require-Bundle: org.eclipse.tm4e.ui
+           -> Bundle-SymbolicName: org.eclipse.tm4e.ui; bundle-version="0.6.1.202211021121"; singleton:="true"
+              org.eclipse.tm4e.ui [1104]
+                Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+                  -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+                     org.eclipse.tm4e.core [1102]
+                       Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.registry; bundle-version="0.3.0"
+    -> Bundle-SymbolicName: org.eclipse.tm4e.registry; bundle-version="0.6.2.202210221922"; singleton:="true"
+       org.eclipse.tm4e.registry [1103]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+           -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.ui; bundle-version="0.1.0"
+    -> Bundle-SymbolicName: org.eclipse.tm4e.ui; bundle-version="0.6.1.202211021121"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.lambda$1(ModuleContainer.java:1834)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1829)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1775)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1739)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:228)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:339)
+
+!ENTRY com.genuitec.eclipse.codetogether.ui.client 4 0 2023-01-30 19:24:07.234
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: com.genuitec.eclipse.codetogether.ui.client [1024]
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core
+    -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+       org.eclipse.tm4e.core [1102]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.registry
+    -> Bundle-SymbolicName: org.eclipse.tm4e.registry; bundle-version="0.6.2.202210221922"; singleton:="true"
+       org.eclipse.tm4e.registry [1103]
+         Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+           -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.ui
+    -> Bundle-SymbolicName: org.eclipse.tm4e.ui; bundle-version="0.6.1.202211021121"; singleton:="true"
+       org.eclipse.tm4e.ui [1104]
+         Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+           -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.lambda$1(ModuleContainer.java:1834)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1829)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1775)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1739)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:228)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:339)
+
+!ENTRY com.genuitec.eclipse.tm4e.languageconfiguration 4 0 2023-01-30 19:24:07.253
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: com.genuitec.eclipse.tm4e.languageconfiguration [1045]
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.ui
+    -> Bundle-SymbolicName: org.eclipse.tm4e.ui; bundle-version="0.6.1.202211021121"; singleton:="true"
+       org.eclipse.tm4e.ui [1104]
+         Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+           -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+              org.eclipse.tm4e.core [1102]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.registry
+    -> Bundle-SymbolicName: org.eclipse.tm4e.registry; bundle-version="0.6.2.202210221922"; singleton:="true"
+       org.eclipse.tm4e.registry [1103]
+         Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+           -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core
+    -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.lambda$1(ModuleContainer.java:1834)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1829)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1775)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1739)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:228)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:339)
+
+!ENTRY org.eclipse.lsp4e 4 0 2023-01-30 19:24:07.258
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.lsp4e [1089]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.ui
+    -> Bundle-SymbolicName: org.eclipse.tm4e.ui; bundle-version="0.6.1.202211021121"; singleton:="true"
+       org.eclipse.tm4e.ui [1104]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.eclipse.tm4e.registry; bundle-version="0.6.2"
+           -> Bundle-SymbolicName: org.eclipse.tm4e.registry; bundle-version="0.6.2.202210221922"; singleton:="true"
+              org.eclipse.tm4e.registry [1103]
+                Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+                  -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+                     org.eclipse.tm4e.core [1102]
+                       Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+           -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.lambda$1(ModuleContainer.java:1834)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1829)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1775)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1739)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:228)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:339)
+
+!ENTRY org.eclipse.lsp4e.debug 4 0 2023-01-30 19:24:07.260
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.lsp4e.debug [1090]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.lambda$1(ModuleContainer.java:1834)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1829)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1775)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1739)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:228)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:339)
+
+!ENTRY org.eclipse.tm4e.core 4 0 2023-01-30 19:24:07.262
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.tm4e.core [1102]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.lambda$1(ModuleContainer.java:1834)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1829)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1775)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1739)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:228)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:339)
+
+!ENTRY org.eclipse.tm4e.registry 4 0 2023-01-30 19:24:07.264
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.tm4e.registry [1103]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+    -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+       org.eclipse.tm4e.core [1102]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.lambda$1(ModuleContainer.java:1834)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1829)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1775)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1739)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:228)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:339)
+
+!ENTRY org.eclipse.tm4e.ui 4 0 2023-01-30 19:24:07.265
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.tm4e.ui [1104]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.registry; bundle-version="0.6.2"
+    -> Bundle-SymbolicName: org.eclipse.tm4e.registry; bundle-version="0.6.2.202210221922"; singleton:="true"
+       org.eclipse.tm4e.registry [1103]
+         Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+           -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+              org.eclipse.tm4e.core [1102]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+    -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.lambda$1(ModuleContainer.java:1834)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1829)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1775)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1739)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:228)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:339)
+
+!ENTRY org.springframework.ide.eclipse.boot.dash 4 0 2023-01-30 19:24:07.269
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.boot.dash [1166]
+  Unresolved requirement: Require-Bundle: org.eclipse.lsp4e
+    -> Bundle-SymbolicName: org.eclipse.lsp4e; bundle-version="0.16.0.202212211403"; singleton:="true"
+       org.eclipse.lsp4e [1089]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.eclipse.tm4e.ui
+           -> Bundle-SymbolicName: org.eclipse.tm4e.ui; bundle-version="0.6.1.202211021121"; singleton:="true"
+              org.eclipse.tm4e.ui [1104]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+                Unresolved requirement: Require-Bundle: org.eclipse.tm4e.registry; bundle-version="0.6.2"
+                  -> Bundle-SymbolicName: org.eclipse.tm4e.registry; bundle-version="0.6.2.202210221922"; singleton:="true"
+                     org.eclipse.tm4e.registry [1103]
+                       Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+                         -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+                            org.eclipse.tm4e.core [1102]
+                              Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+                Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+                  -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.lambda$1(ModuleContainer.java:1834)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1829)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1775)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1739)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:228)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:339)
+
+!ENTRY org.springframework.ide.eclipse.boot.dash.cf 4 0 2023-01-30 19:24:07.276
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.boot.dash.cf [1167]
+  Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.boot.dash
+    -> Bundle-SymbolicName: org.springframework.ide.eclipse.boot.dash; bundle-version="4.17.1.202301011401"; singleton:="true"
+       org.springframework.ide.eclipse.boot.dash [1166]
+         Unresolved requirement: Require-Bundle: org.eclipse.lsp4e
+           -> Bundle-SymbolicName: org.eclipse.lsp4e; bundle-version="0.16.0.202212211403"; singleton:="true"
+              org.eclipse.lsp4e [1089]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+                Unresolved requirement: Require-Bundle: org.eclipse.tm4e.ui
+                  -> Bundle-SymbolicName: org.eclipse.tm4e.ui; bundle-version="0.6.1.202211021121"; singleton:="true"
+                     org.eclipse.tm4e.ui [1104]
+                       Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+                       Unresolved requirement: Require-Bundle: org.eclipse.tm4e.registry; bundle-version="0.6.2"
+                         -> Bundle-SymbolicName: org.eclipse.tm4e.registry; bundle-version="0.6.2.202210221922"; singleton:="true"
+                            org.eclipse.tm4e.registry [1103]
+                              Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+                                -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+                                   org.eclipse.tm4e.core [1102]
+                                     Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+                       Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+                         -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+  Unresolved requirement: Require-Bundle: org.springframework.tooling.cloudfoundry.manifest.ls
+    -> Bundle-SymbolicName: org.springframework.tooling.cloudfoundry.manifest.ls; bundle-version="1.43.0.202301011335"; singleton:="true"
+       org.springframework.tooling.cloudfoundry.manifest.ls [1182]
+         Unresolved requirement: Require-Bundle: org.eclipse.lsp4e; bundle-version="0.9.0"
+           -> Bundle-SymbolicName: org.eclipse.lsp4e; bundle-version="0.16.0.202212211403"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.springframework.tooling.ls.eclipse.commons
+    -> Bundle-SymbolicName: org.springframework.tooling.ls.eclipse.commons; bundle-version="4.17.1.202301011335"; singleton:="true"
+       org.springframework.tooling.ls.eclipse.commons [1184]
+         Unresolved requirement: Require-Bundle: org.eclipse.lsp4e; bundle-version="0.9.0"
+           -> Bundle-SymbolicName: org.eclipse.lsp4e; bundle-version="0.16.0.202212211403"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.lambda$1(ModuleContainer.java:1834)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1829)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1775)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1739)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:228)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:339)
+
+!ENTRY org.springframework.tooling.boot.ls 4 0 2023-01-30 19:24:07.280
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.tooling.boot.ls [1181]
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.ui; bundle-version="0.1.0"
+    -> Bundle-SymbolicName: org.eclipse.tm4e.ui; bundle-version="0.6.1.202211021121"; singleton:="true"
+       org.eclipse.tm4e.ui [1104]
+         Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+           -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+              org.eclipse.tm4e.core [1102]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.springframework.tooling.ls.eclipse.commons; bundle-version="0.2.0"
+    -> Bundle-SymbolicName: org.springframework.tooling.ls.eclipse.commons; bundle-version="4.17.1.202301011335"; singleton:="true"
+       org.springframework.tooling.ls.eclipse.commons [1184]
+         Unresolved requirement: Require-Bundle: org.eclipse.lsp4e; bundle-version="0.9.0"
+           -> Bundle-SymbolicName: org.eclipse.lsp4e; bundle-version="0.16.0.202212211403"; singleton:="true"
+              org.eclipse.lsp4e [1089]
+                Unresolved requirement: Require-Bundle: org.eclipse.tm4e.ui
+                  -> Bundle-SymbolicName: org.eclipse.tm4e.ui; bundle-version="0.6.1.202211021121"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.1.0"
+    -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+  Unresolved requirement: Require-Bundle: org.eclipse.lsp4e; bundle-version="0.16.0"
+    -> Bundle-SymbolicName: org.eclipse.lsp4e; bundle-version="0.16.0.202212211403"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.lsp4e.jdt; bundle-version="0.10.0"
+    -> Bundle-SymbolicName: org.eclipse.lsp4e.jdt; bundle-version="0.10.2.202205031750"; singleton:="true"
+       org.eclipse.lsp4e.jdt [1091]
+         Unresolved requirement: Require-Bundle: org.eclipse.lsp4e; bundle-version="0.13.2"
+           -> Bundle-SymbolicName: org.eclipse.lsp4e; bundle-version="0.16.0.202212211403"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.lambda$1(ModuleContainer.java:1834)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1829)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1775)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1739)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:228)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:339)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2023-01-30 19:24:07.283
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.tooling.ls.eclipse.commons [1184]
+  Unresolved requirement: Require-Bundle: org.eclipse.lsp4e; bundle-version="0.9.0"
+    -> Bundle-SymbolicName: org.eclipse.lsp4e; bundle-version="0.16.0.202212211403"; singleton:="true"
+       org.eclipse.lsp4e [1089]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.eclipse.tm4e.ui
+           -> Bundle-SymbolicName: org.eclipse.tm4e.ui; bundle-version="0.6.1.202211021121"; singleton:="true"
+              org.eclipse.tm4e.ui [1104]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+                Unresolved requirement: Require-Bundle: org.eclipse.tm4e.registry; bundle-version="0.6.2"
+                  -> Bundle-SymbolicName: org.eclipse.tm4e.registry; bundle-version="0.6.2.202210221922"; singleton:="true"
+                     org.eclipse.tm4e.registry [1103]
+                       Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+                         -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+                            org.eclipse.tm4e.core [1102]
+                              Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+                Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+                  -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.lambda$1(ModuleContainer.java:1834)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1829)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1775)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1739)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:228)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:339)
+
+!ENTRY org.springframework.tooling.ls.eclipse.gotosymbol 4 0 2023-01-30 19:24:07.286
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.tooling.ls.eclipse.gotosymbol [1185]
+  Unresolved requirement: Require-Bundle: org.eclipse.lsp4e; bundle-version="0.13.12"
+    -> Bundle-SymbolicName: org.eclipse.lsp4e; bundle-version="0.16.0.202212211403"; singleton:="true"
+       org.eclipse.lsp4e [1089]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.eclipse.tm4e.ui
+           -> Bundle-SymbolicName: org.eclipse.tm4e.ui; bundle-version="0.6.1.202211021121"; singleton:="true"
+              org.eclipse.tm4e.ui [1104]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+                Unresolved requirement: Require-Bundle: org.eclipse.tm4e.registry; bundle-version="0.6.2"
+                  -> Bundle-SymbolicName: org.eclipse.tm4e.registry; bundle-version="0.6.2.202210221922"; singleton:="true"
+                     org.eclipse.tm4e.registry [1103]
+                       Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+                         -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+                            org.eclipse.tm4e.core [1102]
+                              Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+                Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+                  -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.lambda$1(ModuleContainer.java:1834)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1829)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1775)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1739)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:228)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:339)
+
+!ENTRY org.eclipse.core.filebuffers 4 0 2023-01-30 19:24:16.413
+!MESSAGE The content type with id "com.genuitec.eclipse.codetogether.type" specified in the extension point does not exist.
+
+!ENTRY org.eclipse.core.filebuffers 4 0 2023-01-30 19:24:16.415
+!MESSAGE The content type with id "com.genuitec.eclipse.codetogether.type" specified in the extension point does not exist.
+
+!ENTRY org.eclipse.ui 2 2 2023-01-30 19:27:14.396
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+!SESSION 2023-01-30 20:51:04.363 -----------------------------------------------
+eclipse.buildId=4.22.0.I20211124-1800
+java.version=11.0.17
+java.vendor=Ubuntu
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.tm4e.languageconfiguration 4 0 2023-01-30 20:51:09.409
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.tm4e.languageconfiguration [814]
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.registry
+    -> Bundle-SymbolicName: org.eclipse.tm4e.registry; bundle-version="0.6.2.202210221922"; singleton:="true"
+       org.eclipse.tm4e.registry [1103]
+         Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+           -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+              org.eclipse.tm4e.core [1102]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.ui
+    -> Bundle-SymbolicName: org.eclipse.tm4e.ui; bundle-version="0.6.1.202211021121"; singleton:="true"
+       org.eclipse.tm4e.ui [1104]
+         Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+           -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core
+    -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.lambda$1(ModuleContainer.java:1834)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1829)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1775)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1739)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:228)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:339)
+
+!ENTRY org.eclipse.wildwebdeveloper 4 0 2023-01-30 20:51:09.413
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.wildwebdeveloper [861]
+  Unresolved requirement: Require-Bundle: org.eclipse.lsp4e; bundle-version="0.13.6"
+    -> Bundle-SymbolicName: org.eclipse.lsp4e; bundle-version="0.16.0.202212211403"; singleton:="true"
+       org.eclipse.lsp4e [1089]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.eclipse.tm4e.ui
+           -> Bundle-SymbolicName: org.eclipse.tm4e.ui; bundle-version="0.6.1.202211021121"; singleton:="true"
+              org.eclipse.tm4e.ui [1104]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+                Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+                  -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+                     org.eclipse.tm4e.core [1102]
+                       Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+                Unresolved requirement: Require-Bundle: org.eclipse.tm4e.registry; bundle-version="0.6.2"
+                  -> Bundle-SymbolicName: org.eclipse.tm4e.registry; bundle-version="0.6.2.202210221922"; singleton:="true"
+                     org.eclipse.tm4e.registry [1103]
+                       Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+                         -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.registry; bundle-version="0.1.0"
+    -> Bundle-SymbolicName: org.eclipse.tm4e.registry; bundle-version="0.6.2.202210221922"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.lambda$1(ModuleContainer.java:1834)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1829)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1775)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1739)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:228)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:339)
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 4 0 2023-01-30 20:51:09.414
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.wildwebdeveloper.xml [863]
+  Unresolved requirement: Require-Bundle: org.eclipse.lsp4e; bundle-version="0.13.4"
+    -> Bundle-SymbolicName: org.eclipse.lsp4e; bundle-version="0.16.0.202212211403"; singleton:="true"
+       org.eclipse.lsp4e [1089]
+         Unresolved requirement: Require-Bundle: org.eclipse.tm4e.ui
+           -> Bundle-SymbolicName: org.eclipse.tm4e.ui; bundle-version="0.6.1.202211021121"; singleton:="true"
+              org.eclipse.tm4e.ui [1104]
+                Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+                  -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+                     org.eclipse.tm4e.core [1102]
+                       Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.registry; bundle-version="0.3.0"
+    -> Bundle-SymbolicName: org.eclipse.tm4e.registry; bundle-version="0.6.2.202210221922"; singleton:="true"
+       org.eclipse.tm4e.registry [1103]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+           -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.ui; bundle-version="0.1.0"
+    -> Bundle-SymbolicName: org.eclipse.tm4e.ui; bundle-version="0.6.1.202211021121"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.lambda$1(ModuleContainer.java:1834)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1829)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1775)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1739)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:228)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:339)
+
+!ENTRY com.genuitec.eclipse.codetogether.ui.client 4 0 2023-01-30 20:51:09.453
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: com.genuitec.eclipse.codetogether.ui.client [1024]
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.registry
+    -> Bundle-SymbolicName: org.eclipse.tm4e.registry; bundle-version="0.6.2.202210221922"; singleton:="true"
+       org.eclipse.tm4e.registry [1103]
+         Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+           -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+              org.eclipse.tm4e.core [1102]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core
+    -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.ui
+    -> Bundle-SymbolicName: org.eclipse.tm4e.ui; bundle-version="0.6.1.202211021121"; singleton:="true"
+       org.eclipse.tm4e.ui [1104]
+         Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+           -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.lambda$1(ModuleContainer.java:1834)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1829)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1775)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1739)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:228)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:339)
+
+!ENTRY com.genuitec.eclipse.tm4e.languageconfiguration 4 0 2023-01-30 20:51:09.470
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: com.genuitec.eclipse.tm4e.languageconfiguration [1045]
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core
+    -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+       org.eclipse.tm4e.core [1102]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.ui
+    -> Bundle-SymbolicName: org.eclipse.tm4e.ui; bundle-version="0.6.1.202211021121"; singleton:="true"
+       org.eclipse.tm4e.ui [1104]
+         Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+           -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.registry
+    -> Bundle-SymbolicName: org.eclipse.tm4e.registry; bundle-version="0.6.2.202210221922"; singleton:="true"
+       org.eclipse.tm4e.registry [1103]
+         Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+           -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.lambda$1(ModuleContainer.java:1834)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1829)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1775)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1739)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:228)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:339)
+
+!ENTRY org.eclipse.lsp4e 4 0 2023-01-30 20:51:09.474
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.lsp4e [1089]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.ui
+    -> Bundle-SymbolicName: org.eclipse.tm4e.ui; bundle-version="0.6.1.202211021121"; singleton:="true"
+       org.eclipse.tm4e.ui [1104]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+           -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+              org.eclipse.tm4e.core [1102]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.eclipse.tm4e.registry; bundle-version="0.6.2"
+           -> Bundle-SymbolicName: org.eclipse.tm4e.registry; bundle-version="0.6.2.202210221922"; singleton:="true"
+              org.eclipse.tm4e.registry [1103]
+                Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+                  -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.lambda$1(ModuleContainer.java:1834)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1829)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1775)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1739)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:228)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:339)
+
+!ENTRY org.eclipse.lsp4e.debug 4 0 2023-01-30 20:51:09.476
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.lsp4e.debug [1090]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.lambda$1(ModuleContainer.java:1834)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1829)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1775)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1739)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:228)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:339)
+
+!ENTRY org.eclipse.tm4e.core 4 0 2023-01-30 20:51:09.479
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.tm4e.core [1102]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.lambda$1(ModuleContainer.java:1834)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1829)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1775)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1739)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:228)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:339)
+
+!ENTRY org.eclipse.tm4e.registry 4 0 2023-01-30 20:51:09.481
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.tm4e.registry [1103]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+    -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+       org.eclipse.tm4e.core [1102]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.lambda$1(ModuleContainer.java:1834)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1829)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1775)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1739)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:228)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:339)
+
+!ENTRY org.eclipse.tm4e.ui 4 0 2023-01-30 20:51:09.483
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.tm4e.ui [1104]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+    -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+       org.eclipse.tm4e.core [1102]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.registry; bundle-version="0.6.2"
+    -> Bundle-SymbolicName: org.eclipse.tm4e.registry; bundle-version="0.6.2.202210221922"; singleton:="true"
+       org.eclipse.tm4e.registry [1103]
+         Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+           -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.lambda$1(ModuleContainer.java:1834)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1829)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1775)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1739)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:228)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:339)
+
+!ENTRY org.springframework.ide.eclipse.boot.dash 4 0 2023-01-30 20:51:09.488
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.boot.dash [1166]
+  Unresolved requirement: Require-Bundle: org.eclipse.lsp4e
+    -> Bundle-SymbolicName: org.eclipse.lsp4e; bundle-version="0.16.0.202212211403"; singleton:="true"
+       org.eclipse.lsp4e [1089]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.eclipse.tm4e.ui
+           -> Bundle-SymbolicName: org.eclipse.tm4e.ui; bundle-version="0.6.1.202211021121"; singleton:="true"
+              org.eclipse.tm4e.ui [1104]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+                Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+                  -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+                     org.eclipse.tm4e.core [1102]
+                       Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+                Unresolved requirement: Require-Bundle: org.eclipse.tm4e.registry; bundle-version="0.6.2"
+                  -> Bundle-SymbolicName: org.eclipse.tm4e.registry; bundle-version="0.6.2.202210221922"; singleton:="true"
+                     org.eclipse.tm4e.registry [1103]
+                       Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+                         -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.lambda$1(ModuleContainer.java:1834)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1829)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1775)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1739)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:228)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:339)
+
+!ENTRY org.springframework.ide.eclipse.boot.dash.cf 4 0 2023-01-30 20:51:09.492
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.boot.dash.cf [1167]
+  Unresolved requirement: Require-Bundle: org.springframework.tooling.cloudfoundry.manifest.ls
+    -> Bundle-SymbolicName: org.springframework.tooling.cloudfoundry.manifest.ls; bundle-version="1.43.0.202301011335"; singleton:="true"
+       org.springframework.tooling.cloudfoundry.manifest.ls [1182]
+         Unresolved requirement: Require-Bundle: org.eclipse.lsp4e; bundle-version="0.9.0"
+           -> Bundle-SymbolicName: org.eclipse.lsp4e; bundle-version="0.16.0.202212211403"; singleton:="true"
+              org.eclipse.lsp4e [1089]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+                Unresolved requirement: Require-Bundle: org.eclipse.tm4e.ui
+                  -> Bundle-SymbolicName: org.eclipse.tm4e.ui; bundle-version="0.6.1.202211021121"; singleton:="true"
+                     org.eclipse.tm4e.ui [1104]
+                       Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+                       Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+                         -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+                            org.eclipse.tm4e.core [1102]
+                              Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+                       Unresolved requirement: Require-Bundle: org.eclipse.tm4e.registry; bundle-version="0.6.2"
+                         -> Bundle-SymbolicName: org.eclipse.tm4e.registry; bundle-version="0.6.2.202210221922"; singleton:="true"
+                            org.eclipse.tm4e.registry [1103]
+                              Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+                                -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+  Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.boot.dash
+    -> Bundle-SymbolicName: org.springframework.ide.eclipse.boot.dash; bundle-version="4.17.1.202301011401"; singleton:="true"
+       org.springframework.ide.eclipse.boot.dash [1166]
+         Unresolved requirement: Require-Bundle: org.eclipse.lsp4e
+           -> Bundle-SymbolicName: org.eclipse.lsp4e; bundle-version="0.16.0.202212211403"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.springframework.tooling.ls.eclipse.commons
+    -> Bundle-SymbolicName: org.springframework.tooling.ls.eclipse.commons; bundle-version="4.17.1.202301011335"; singleton:="true"
+       org.springframework.tooling.ls.eclipse.commons [1184]
+         Unresolved requirement: Require-Bundle: org.eclipse.lsp4e; bundle-version="0.9.0"
+           -> Bundle-SymbolicName: org.eclipse.lsp4e; bundle-version="0.16.0.202212211403"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.lambda$1(ModuleContainer.java:1834)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1829)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1775)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1739)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:228)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:339)
+
+!ENTRY org.springframework.tooling.boot.ls 4 0 2023-01-30 20:51:09.499
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.tooling.boot.ls [1181]
+  Unresolved requirement: Require-Bundle: org.eclipse.lsp4e; bundle-version="0.16.0"
+    -> Bundle-SymbolicName: org.eclipse.lsp4e; bundle-version="0.16.0.202212211403"; singleton:="true"
+       org.eclipse.lsp4e [1089]
+         Unresolved requirement: Require-Bundle: org.eclipse.tm4e.ui
+           -> Bundle-SymbolicName: org.eclipse.tm4e.ui; bundle-version="0.6.1.202211021121"; singleton:="true"
+              org.eclipse.tm4e.ui [1104]
+                Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+                  -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+                     org.eclipse.tm4e.core [1102]
+                       Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.1.0"
+    -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+  Unresolved requirement: Require-Bundle: org.eclipse.lsp4e.jdt; bundle-version="0.10.0"
+    -> Bundle-SymbolicName: org.eclipse.lsp4e.jdt; bundle-version="0.10.2.202205031750"; singleton:="true"
+       org.eclipse.lsp4e.jdt [1091]
+         Unresolved requirement: Require-Bundle: org.eclipse.lsp4e; bundle-version="0.13.2"
+           -> Bundle-SymbolicName: org.eclipse.lsp4e; bundle-version="0.16.0.202212211403"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.ui; bundle-version="0.1.0"
+    -> Bundle-SymbolicName: org.eclipse.tm4e.ui; bundle-version="0.6.1.202211021121"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.springframework.tooling.ls.eclipse.commons; bundle-version="0.2.0"
+    -> Bundle-SymbolicName: org.springframework.tooling.ls.eclipse.commons; bundle-version="4.17.1.202301011335"; singleton:="true"
+       org.springframework.tooling.ls.eclipse.commons [1184]
+         Unresolved requirement: Require-Bundle: org.eclipse.lsp4e; bundle-version="0.9.0"
+           -> Bundle-SymbolicName: org.eclipse.lsp4e; bundle-version="0.16.0.202212211403"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.lambda$1(ModuleContainer.java:1834)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1829)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1775)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1739)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:228)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:339)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2023-01-30 20:51:09.502
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.tooling.ls.eclipse.commons [1184]
+  Unresolved requirement: Require-Bundle: org.eclipse.lsp4e; bundle-version="0.9.0"
+    -> Bundle-SymbolicName: org.eclipse.lsp4e; bundle-version="0.16.0.202212211403"; singleton:="true"
+       org.eclipse.lsp4e [1089]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.eclipse.tm4e.ui
+           -> Bundle-SymbolicName: org.eclipse.tm4e.ui; bundle-version="0.6.1.202211021121"; singleton:="true"
+              org.eclipse.tm4e.ui [1104]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+                Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+                  -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+                     org.eclipse.tm4e.core [1102]
+                       Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+                Unresolved requirement: Require-Bundle: org.eclipse.tm4e.registry; bundle-version="0.6.2"
+                  -> Bundle-SymbolicName: org.eclipse.tm4e.registry; bundle-version="0.6.2.202210221922"; singleton:="true"
+                     org.eclipse.tm4e.registry [1103]
+                       Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+                         -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.lambda$1(ModuleContainer.java:1834)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1829)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1775)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1739)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:228)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:339)
+
+!ENTRY org.springframework.tooling.ls.eclipse.gotosymbol 4 0 2023-01-30 20:51:09.505
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.tooling.ls.eclipse.gotosymbol [1185]
+  Unresolved requirement: Require-Bundle: org.eclipse.lsp4e; bundle-version="0.13.12"
+    -> Bundle-SymbolicName: org.eclipse.lsp4e; bundle-version="0.16.0.202212211403"; singleton:="true"
+       org.eclipse.lsp4e [1089]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.eclipse.tm4e.ui
+           -> Bundle-SymbolicName: org.eclipse.tm4e.ui; bundle-version="0.6.1.202211021121"; singleton:="true"
+              org.eclipse.tm4e.ui [1104]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+                Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+                  -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+                     org.eclipse.tm4e.core [1102]
+                       Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+                Unresolved requirement: Require-Bundle: org.eclipse.tm4e.registry; bundle-version="0.6.2"
+                  -> Bundle-SymbolicName: org.eclipse.tm4e.registry; bundle-version="0.6.2.202210221922"; singleton:="true"
+                     org.eclipse.tm4e.registry [1103]
+                       Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.1"
+                         -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.1.202210241440"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.lambda$1(ModuleContainer.java:1834)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1829)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1775)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1739)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:228)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:339)
+
+!ENTRY org.eclipse.core.filebuffers 4 0 2023-01-30 20:51:32.066
+!MESSAGE The content type with id "com.genuitec.eclipse.codetogether.type" specified in the extension point does not exist.
+
+!ENTRY org.eclipse.core.filebuffers 4 0 2023-01-30 20:51:32.067
+!MESSAGE The content type with id "com.genuitec.eclipse.codetogether.type" specified in the extension point does not exist.
+
+!ENTRY org.eclipse.ui 2 2 2023-01-30 21:18:56.071
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)

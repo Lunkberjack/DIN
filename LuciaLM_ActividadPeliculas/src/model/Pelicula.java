@@ -1,8 +1,5 @@
 package model;
 
-import java.io.FileInputStream;
-import java.io.InputStream;
-
 public class Pelicula {
 	// Para llevar la cuenta de películas introducidas (y el id de cada una)
 	private static int contadorPeliculas = 0;

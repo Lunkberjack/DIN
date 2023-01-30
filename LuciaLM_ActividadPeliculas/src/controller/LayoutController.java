@@ -6,9 +6,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.URL;
-import java.sql.Blob;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
@@ -17,7 +15,6 @@ import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
-import javafx.collections.ObservableSet;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -33,6 +30,12 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import model.Pelicula;
 
+/**
+ * Clase con la lógica que controla tanto la adición como la modificación 
+ * y eliminación de los datos del Videoclub.
+ * @author lucia
+ *
+ */
 public class LayoutController implements Initializable {
 	private ConnectionController conexion = new ConnectionController();
 
@@ -95,12 +98,19 @@ public class LayoutController implements Initializable {
 
 	@FXML
 	private ImageView imagenMostrar;
-
+    
 	private ObservableList<Pelicula> listaPeliculas;
 
+	/**
+	 * Añade una película tanto a la base de datos como a la lista observable.
+	 * 
+	 * Usa el método crearPelicula() para dividir la funcionalidad y hacer el código más
+	 * manejable.
+	 * 
+	 * @throws SQLException
+	 */
 	void aniadir() throws SQLException {		
 		Pelicula peli = crearPelicula();
-		//limpiar();
 		listaPeliculas.add(peli);
 
 		metodos.aniadirPelicula(Pelicula.getContadorPeliculas(), textTitulo.getText(), textGenero.getText(),
@@ -108,6 +118,15 @@ public class LayoutController implements Initializable {
 				textActores.getText(), readFile(foto));
 	}
 
+	/**
+	 * Permite modificar los datos de la película sobre la que tengamos la selección.
+	 * 
+	 * Se vale del método modificar() de la clase MetodosSQL, que ejecuta un UPDATE de
+	 * todos los campos para que así se pueda editar fácilmente cualquier dato.
+	 * 
+	 * @param peliculaSeleccionada
+	 * @throws SQLException
+	 */
 	void editar(Pelicula peliculaSeleccionada) throws SQLException {		
 		metodos.modificar(peliculaSeleccionada.getId(), textTitulo.getText(), textGenero.getText(), textDuracion.getText(), textSinopsis.getText(),
 				textPais.getText(), textIdioma.getText(), textActores.getText(), readFile(foto));
@@ -115,12 +134,22 @@ public class LayoutController implements Initializable {
 		actualizar();
 	}
 
+	/**
+	 * Elimina la película sobre la que esté el foco o selección en ese momento.
+	 * La elimina tanto de la lista como de la base de datos.
+	 * 
+	 * @throws SQLException
+	 */
 	private void borrar() throws SQLException {
 		Pelicula aBorrar = getTablaPeliculaSeleccionada();
-		//listaPeliculas.remove(aBorrar);
+		listaPeliculas.remove(aBorrar);
 		metodos.eliminar(aBorrar.getId());
 	}
 
+	/**
+	 * Crea una película añadiendo todos los datos que se hayan proporcionado
+	 * en los TextField de la interfaz.
+	 */
 	private Pelicula crearPelicula() {
 		return new Pelicula(textTitulo.getText(), textGenero.getText(), textDuracion.getText(),
 				textSinopsis.getText(), textPais.getText(), textIdioma.getText(),
@@ -147,38 +176,7 @@ public class LayoutController implements Initializable {
 		}
 	}
 
-	/**
-	 * Todas las funciones que se ejecutan cada vez que se inicia la aplicación.
-	 * 
-	 * Se encarga de crear una tabla de cero, 
-	 * @throws SQLException
-	 */
-	private void inicializar() throws SQLException {
-		conexion.conectar("jdbc:sqlite:/home/lucia/videoclub.db");
-		metodos = new MetodosSQL(conexion.getConexion());
-		listaPeliculas = FXCollections.observableArrayList();
-		//metodos.tablaDeCero(); // Cada vez que iniciamos la aplicación tenemos un nuevo videoclub
-		
-		ResultSet rs = metodos.recibirTabla();
-		int cuentaId = 0;
-		
-		while (rs.next()) {
-			cuentaId++;
-			Pelicula peli = new Pelicula(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4),
-					rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getBytes(9));
-		    listaPeliculas.add(peli);
-		}
-		
-		Pelicula.setContadorPeliculas(cuentaId);
-		
-		colTitulo.setCellValueFactory(new PropertyValueFactory<Pelicula, String>("titulo"));
-		colGenero.setCellValueFactory(new PropertyValueFactory<Pelicula, String>("genero"));
-		colPais.setCellValueFactory(new PropertyValueFactory<Pelicula, String>("pais"));
-		
-		tabla.setItems(listaPeliculas);
-	}
-
-
+	// Se ejecuta cada vez que la película seleccionada en la tabla cambia.
 	private final ListChangeListener<Pelicula> selectorTabla = new ListChangeListener<Pelicula>(){
 		@Override
 		public void onChanged(Change<? extends Pelicula> arg0) {
@@ -186,6 +184,12 @@ public class LayoutController implements Initializable {
 		}
 	};
 
+	/**
+	 * Crea una nueva lista con solo un elemento, que devuelve la Película que está actualmente
+	 * seleccionada en la vista de tabla (ObservableList).
+	 * 
+	 * @return la película seleccionada
+	 */
 	private Pelicula getTablaPeliculaSeleccionada() {
 		if(tabla != null) {
 			List<Pelicula> listaNueva = tabla.getSelectionModel().getSelectedItems();
@@ -198,6 +202,11 @@ public class LayoutController implements Initializable {
 		return null;
 	}
 
+	/**
+	 * Haciendo uso del método getTablaPeliculaSeleccionada() para saber la película
+	 * en la que está el foco, establece todos los TextField de la interfaz para que
+	 * coincidan con los campos de esta película (y sea mucho más fácil editarla).
+	 */
 	private void indicarFilaSeleccionada() {
 		final Pelicula peliculaSeleccionada = getTablaPeliculaSeleccionada();
 		if (peliculaSeleccionada != null) {
@@ -216,22 +225,10 @@ public class LayoutController implements Initializable {
 		}
 	}
 
-	@Override
-	public void initialize(URL url, ResourceBundle rb) {
-		try {
-			inicializar();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		final ObservableList<Pelicula> tablaClienteSeleccionado = tabla.getSelectionModel().getSelectedItems();
-		tablaClienteSeleccionado.addListener(selectorTabla);
-	}
-
 	@FXML
 	void click(ActionEvent event) {
 		// Se ha pulsado el botón añadir (+)
-		if(event.getSource().equals(btnAniadir)) { 
-			System.out.println("pulsao");
+		if(event.getSource().equals(btnAniadir)) {
 			try {
 				aniadir();
 			} catch (SQLException e) {
@@ -308,5 +305,38 @@ public class LayoutController implements Initializable {
 		// Si el ByteArrayInputStream no es null, lo devuelve.
 		// En otro caso, devuelve null.
 		return bos != null ? bos.toByteArray() : null;
+	}
+	
+	/**
+	 * Todas las funciones que se ejecutan cada vez que se inicia la aplicación.
+	 * 
+	 * Se encarga de crear una tabla de cero, muestra una selección de columnas y
+	 * crea una lista Observable, para que podamos visualizar lo que le ocurre al añadir
+	 * y modificar elementos de la misma.
+	 * 
+	 * @throws SQLException
+	 */
+	private void inicializar() throws SQLException {
+		conexion.conectar("jdbc:sqlite:/home/lucia/videoclub.db");
+		metodos = new MetodosSQL(conexion.getConexion());
+		listaPeliculas = FXCollections.observableArrayList();
+		metodos.tablaDeCero(); // Cada vez que iniciamos la aplicación tenemos un nuevo videoclub
+		
+		colTitulo.setCellValueFactory(new PropertyValueFactory<Pelicula, String>("titulo"));
+		colGenero.setCellValueFactory(new PropertyValueFactory<Pelicula, String>("genero"));
+		colPais.setCellValueFactory(new PropertyValueFactory<Pelicula, String>("pais"));
+		
+		tabla.setItems(listaPeliculas);
+	}
+	
+	@Override
+	public void initialize(URL url, ResourceBundle rb) {
+		try {
+			inicializar();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		final ObservableList<Pelicula> tablaClienteSeleccionado = tabla.getSelectionModel().getSelectedItems();
+		tablaClienteSeleccionado.addListener(selectorTabla);
 	}
 }

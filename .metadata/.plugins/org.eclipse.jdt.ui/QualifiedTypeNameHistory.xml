@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.awt.Button"/>
-    <fullyQualifiedTypeName name="java.beans.EventHandler"/>
-    <fullyQualifiedTypeName name="javafx.scene.layout.StackPane"/>
     <fullyQualifiedTypeName name="javax.swing.GroupLayout.Group"/>
     <fullyQualifiedTypeName name="javafx.scene.control.TableColumn"/>
     <fullyQualifiedTypeName name="javafx.scene.layout.Border"/>
@@ -20,9 +17,7 @@
     <fullyQualifiedTypeName name="javafx.geometry.Insets"/>
     <fullyQualifiedTypeName name="javafx.scene.control.TextField"/>
     <fullyQualifiedTypeName name="java.util.Objects"/>
-    <fullyQualifiedTypeName name="javafx.scene.Scene"/>
     <fullyQualifiedTypeName name="javafx.scene.layout.VBox"/>
-    <fullyQualifiedTypeName name="javafx.scene.control.Label"/>
     <fullyQualifiedTypeName name="javafx.scene.control.Toggle"/>
     <fullyQualifiedTypeName name="javafx.scene.control.ToggleGroup"/>
     <fullyQualifiedTypeName name="javafx.beans.value.ChangeListener"/>
@@ -45,7 +40,6 @@
     <fullyQualifiedTypeName name="javafx.scene.control.Button"/>
     <fullyQualifiedTypeName name="javafx.fxml.FXML"/>
     <fullyQualifiedTypeName name="java.awt.event.ActionEvent"/>
-    <fullyQualifiedTypeName name="javafx.fxml.FXMLLoader"/>
     <fullyQualifiedTypeName name="javafx.fxml.Initializable"/>
     <fullyQualifiedTypeName name="javafx.scene.control.TableView"/>
     <fullyQualifiedTypeName name="model.Pelicula"/>
@@ -59,4 +53,11 @@
     <fullyQualifiedTypeName name="java.io.ByteArrayOutputStream"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
     <fullyQualifiedTypeName name="javafx.collections.ObservableSet"/>
+    <fullyQualifiedTypeName name="javafx.scene.Parent"/>
+    <fullyQualifiedTypeName name="javafx.fxml.FXMLLoader"/>
+    <fullyQualifiedTypeName name="javafx.scene.Scene"/>
+    <fullyQualifiedTypeName name="javafx.scene.control.Label"/>
+    <fullyQualifiedTypeName name="javafx.scene.control.DialogPane"/>
+    <fullyQualifiedTypeName name="javafx.scene.control.Dialog"/>
+    <fullyQualifiedTypeName name="javafx.scene.control.ButtonType"/>
 </qualifiedTypeNameHistroy>
